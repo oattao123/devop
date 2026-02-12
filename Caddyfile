@@ -1,0 +1,31 @@
+:80 {
+    # Serve built frontend assets directly (if not under /static)
+    root * /srv
+    file_server
+
+    # Handle Django static files: strip /static/ prefix to find them in volume root
+    handle_path /static/* {
+        root * /srv
+        file_server
+    }
+
+    # Handle Django media files
+    handle_path /media/* {
+        root * /srv/media
+        file_server
+    }
+
+    # Proxy API and Admin to Backend
+    handle /api/* {
+        reverse_proxy backend:8000
+    }
+    handle /admin/* {
+        reverse_proxy backend:8000
+    }
+
+    # SPA Fallback for everything else
+    handle {
+        try_files {path} /index.html
+        file_server
+    }
+}
