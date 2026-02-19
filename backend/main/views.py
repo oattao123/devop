@@ -9,6 +9,8 @@ from rest_framework import viewsets
 from main.serializers import ResumeSerializer, PreviousJobSerializer, EducationSerializer, SkillSerializer
 
 
+
+# CI Trigger comment
 class ResumeViewSet(viewsets.ModelViewSet):
     queryset = Resume.objects.all()
     serializer_class = ResumeSerializer
