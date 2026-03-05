@@ -1,0 +1,6 @@
+---
+- name: Configure Web Infrastructure
+  hosts: webservers
+  become: yes
+  roles:
+    - nginx_web

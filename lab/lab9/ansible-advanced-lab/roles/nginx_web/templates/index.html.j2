@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: #1a202c; color: white; text-align: center; padding-top: 100px;">
+    <h1>{{ app_greeting }}</h1>
+    <p>Server Name: {{ server_name }}</p>
+    <p>Simulated DB Password: {{ db_password | default('Not Provided') }}</p>
+</body>
+</html>

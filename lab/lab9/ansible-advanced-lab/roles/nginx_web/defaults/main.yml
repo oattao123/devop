@@ -1,0 +1,5 @@
+---
+# defaults file for nginx_web
+http_port: 80
+server_name: localhost
+app_greeting: "Welcome to Ansible Roles & Vault!"
