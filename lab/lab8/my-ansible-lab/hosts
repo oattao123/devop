@@ -1,6 +1,0 @@
-[webservers]
-192.168.1.121 ansible_port=2222
-
-[webservers:vars]
-ansible_user=target_user
-ansible_connection=ssh
